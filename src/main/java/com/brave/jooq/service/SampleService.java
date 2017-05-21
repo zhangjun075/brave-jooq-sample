@@ -5,6 +5,7 @@ import org.jooq.Record;
 import org.jooq.Record4;
 import org.jooq.Result;
 import org.jooq.util.derby.sys.Sys;
+import org.jooq.util.maven.sample.tables.records.BookRecord;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -34,5 +35,9 @@ public class SampleService {
     public void transactionTest(){
         sampleRepos.updateAuthor();
         sampleRepos.insertBookException();
+    }
+
+    public BookRecord fetchOneBook(){
+        return sampleRepos.selectBook().get(0);
     }
 }

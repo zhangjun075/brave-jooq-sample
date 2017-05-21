@@ -48,6 +48,11 @@ public class SampleController {
 
     @GetMapping(value = "/v5")
     public void testTrans(){
-        sampleService.transactionTest();;
+        sampleService.transactionTest();
+    }
+
+    @GetMapping(value = "/v6")
+    public void selectBookOne(){
+        System.out.println(sampleService.fetchOneBook());
     }
 }

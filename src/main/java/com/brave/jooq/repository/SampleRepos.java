@@ -1,12 +1,13 @@
 package com.brave.jooq.repository;
 
-import org.jooq.DSLContext;
-import org.jooq.Record;
-import org.jooq.Record4;
-import org.jooq.Result;
+import org.jooq.*;
+import org.jooq.util.maven.sample.tables.Book;
+import org.jooq.util.maven.sample.tables.records.BookRecord;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import static org.jooq.impl.DSL.param;
+import static org.jooq.impl.DSL.val;
 import static org.jooq.util.maven.sample.Tables.AUTHOR;
 import static org.jooq.util.maven.sample.Tables.BOOK;
 
@@ -27,6 +28,11 @@ public class SampleRepos {
                 .join(BOOK)
                 .on(BOOK.AUTHOR_ID.eq(AUTHOR.ID))
                 .fetch();
+
+    }
+
+    public Result<BookRecord> selectBook(){
+        return  dslContext.fetch(BOOK,BOOK.ID.eq(1));
     }
 
     public int insertBook(){
@@ -41,9 +47,11 @@ public class SampleRepos {
     }
 
     public int updateAuthor(){
+        Param<Integer> x = val(1);
+        Param<Integer> y = param("x",42);
         int record = dslContext.update(AUTHOR)
                 .set(AUTHOR.FIRST_NAME,"heling")
-                .where(AUTHOR.ID.eq(1))
+                .where(AUTHOR.ID.eq(x))
                 .execute();
         return record;
     }
