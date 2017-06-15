@@ -1,6 +1,7 @@
 package com.brave.jooq.config;
 
 import com.brave.jooq.exception.ExceptionTranslator;
+import com.druid.brave.autoconfigure.DruidDataSourceBuilder;
 import org.apache.commons.dbcp.BasicDataSourceFactory;
 import org.jooq.*;
 import org.jooq.impl.DataSourceConnectionProvider;
@@ -29,12 +30,19 @@ public class JooqSpringBootConfiguration {
 
 
     //dbcp-datasource
-    @Bean(destroyMethod = "close",name = "dataSource")
-    @ConfigurationProperties(prefix = "spring.datasource")
-    public DataSource dataSource() throws Exception {
-        DataSource dataSource = BasicDataSourceFactory.createDataSource(new Properties());
-        return dataSource;
+//    @Bean(destroyMethod = "close",name = "dataSource")
+//    @ConfigurationProperties(prefix = "spring.datasource")
+//    public DataSource dataSource() throws Exception {
+//        DataSource dataSource = BasicDataSourceFactory.createDataSource(new Properties());
+//        return dataSource;
+//    }
+
+    @Bean
+    @ConfigurationProperties(prefix = "spring.datasource.druid")
+    public DataSource dataSource() {
+        return DruidDataSourceBuilder.create().build();
     }
+
 
     @Bean
     public DSLContext dsl(org.jooq.Configuration config) {

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.druid.brave:brave-druid-springboot-starter:1.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/druid/brave/brave-druid-springboot-starter/1.0-SNAPSHOT/brave-druid-springboot-starter-1.0-20170615.035820-1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/druid/brave/brave-druid-springboot-starter/1.0-SNAPSHOT/brave-druid-springboot-starter-1.0-20170615.035820-1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/druid/brave/brave-druid-springboot-starter/1.0-SNAPSHOT/brave-druid-springboot-starter-1.0-20170615.035820-1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

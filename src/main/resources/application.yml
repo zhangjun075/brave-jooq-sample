@@ -3,12 +3,18 @@ spring:
     name: jooq-sample
 #Database Configuration
   datasource:
-    url: jdbc:mysql://localhost:3309/library
-    driver-class-name: com.mysql.jdbc.Driver
-    username: root
-    password: 123456
-    initialize: false
-    continue-on-error: true
+    druid:
+      url: jdbc:mysql://localhost:3309/library
+      driver-class-name: com.mysql.jdbc.Driver
+      username: root
+      password: 123456
+      initialize: false
+      continue-on-error: true
+      aop-patterns: com.brave.jooq.service.*
+      WebStatFilter:
+        filters: stat
+  aop:
+    proxy-target-class: true
 server:
   port: 9001
 
