@@ -10,6 +10,7 @@ import org.jooq.util.maven.sample.tables.Author;
 import org.jooq.util.maven.sample.tables.Book;
 import org.jooq.util.maven.sample.tables.BookStore;
 import org.jooq.util.maven.sample.tables.BookToBookStore;
+import org.jooq.util.maven.sample.tables.Databasechangeloglock;
 import org.jooq.util.maven.sample.tables.Language;
 
 
@@ -45,6 +46,11 @@ public class Tables {
 	 * The table library.book_to_book_store
 	 */
 	public static final BookToBookStore BOOK_TO_BOOK_STORE = org.jooq.util.maven.sample.tables.BookToBookStore.BOOK_TO_BOOK_STORE;
+
+	/**
+	 * The table library.DATABASECHANGELOGLOCK
+	 */
+	public static final Databasechangeloglock DATABASECHANGELOGLOCK = org.jooq.util.maven.sample.tables.Databasechangeloglock.DATABASECHANGELOGLOCK;
 
 	/**
 	 * The table library.language

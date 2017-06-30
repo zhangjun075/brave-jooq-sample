@@ -1,6 +1,8 @@
 spring:
   application:
     name: jooq-sample
+  aop:
+    proxy-target-class: true
 #Database Configuration
   datasource:
     druid:
@@ -13,8 +15,9 @@ spring:
       aop-patterns: com.brave.jooq.service.*
       WebStatFilter:
         filters: stat
-  aop:
-    proxy-target-class: true
+management:
+  security:
+    enabled: false
 server:
   port: 9001
 
@@ -26,6 +29,10 @@ sample-database:
 jooq:
   sql:
     dialect: MYSQL
+liquibase:
+  enabled: true
+  change-log: classpath:business_table.xml
+
 
 
 

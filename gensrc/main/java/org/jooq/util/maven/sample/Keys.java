@@ -12,11 +12,13 @@ import org.jooq.util.maven.sample.tables.Author;
 import org.jooq.util.maven.sample.tables.Book;
 import org.jooq.util.maven.sample.tables.BookStore;
 import org.jooq.util.maven.sample.tables.BookToBookStore;
+import org.jooq.util.maven.sample.tables.Databasechangeloglock;
 import org.jooq.util.maven.sample.tables.Language;
 import org.jooq.util.maven.sample.tables.records.AuthorRecord;
 import org.jooq.util.maven.sample.tables.records.BookRecord;
 import org.jooq.util.maven.sample.tables.records.BookStoreRecord;
 import org.jooq.util.maven.sample.tables.records.BookToBookStoreRecord;
+import org.jooq.util.maven.sample.tables.records.DatabasechangeloglockRecord;
 import org.jooq.util.maven.sample.tables.records.LanguageRecord;
 
 
@@ -47,6 +49,7 @@ public class Keys {
 	public static final UniqueKey<BookRecord> KEY_BOOK_PRIMARY = UniqueKeys0.KEY_BOOK_PRIMARY;
 	public static final UniqueKey<BookStoreRecord> KEY_BOOK_STORE_NAME = UniqueKeys0.KEY_BOOK_STORE_NAME;
 	public static final UniqueKey<BookToBookStoreRecord> KEY_BOOK_TO_BOOK_STORE_PRIMARY = UniqueKeys0.KEY_BOOK_TO_BOOK_STORE_PRIMARY;
+	public static final UniqueKey<DatabasechangeloglockRecord> KEY_DATABASECHANGELOGLOCK_PRIMARY = UniqueKeys0.KEY_DATABASECHANGELOGLOCK_PRIMARY;
 	public static final UniqueKey<LanguageRecord> KEY_LANGUAGE_PRIMARY = UniqueKeys0.KEY_LANGUAGE_PRIMARY;
 
 	// -------------------------------------------------------------------------
@@ -63,6 +66,7 @@ public class Keys {
 		public static final UniqueKey<BookRecord> KEY_BOOK_PRIMARY = createUniqueKey(Book.BOOK, Book.BOOK.ID);
 		public static final UniqueKey<BookStoreRecord> KEY_BOOK_STORE_NAME = createUniqueKey(BookStore.BOOK_STORE, BookStore.BOOK_STORE.NAME);
 		public static final UniqueKey<BookToBookStoreRecord> KEY_BOOK_TO_BOOK_STORE_PRIMARY = createUniqueKey(BookToBookStore.BOOK_TO_BOOK_STORE, BookToBookStore.BOOK_TO_BOOK_STORE.NAME, BookToBookStore.BOOK_TO_BOOK_STORE.BOOK_ID);
+		public static final UniqueKey<DatabasechangeloglockRecord> KEY_DATABASECHANGELOGLOCK_PRIMARY = createUniqueKey(Databasechangeloglock.DATABASECHANGELOGLOCK, Databasechangeloglock.DATABASECHANGELOGLOCK.ID);
 		public static final UniqueKey<LanguageRecord> KEY_LANGUAGE_PRIMARY = createUniqueKey(Language.LANGUAGE, Language.LANGUAGE.ID);
 	}
 }

@@ -16,6 +16,7 @@ import org.jooq.util.maven.sample.tables.Author;
 import org.jooq.util.maven.sample.tables.Book;
 import org.jooq.util.maven.sample.tables.BookStore;
 import org.jooq.util.maven.sample.tables.BookToBookStore;
+import org.jooq.util.maven.sample.tables.Databasechangeloglock;
 import org.jooq.util.maven.sample.tables.Language;
 
 
@@ -32,7 +33,7 @@ import org.jooq.util.maven.sample.tables.Language;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Library extends SchemaImpl {
 
-	private static final long serialVersionUID = -536698579;
+	private static final long serialVersionUID = -1603628387;
 
 	/**
 	 * The reference instance of <code>library</code>
@@ -59,6 +60,7 @@ public class Library extends SchemaImpl {
 			Book.BOOK,
 			BookStore.BOOK_STORE,
 			BookToBookStore.BOOK_TO_BOOK_STORE,
+			Databasechangeloglock.DATABASECHANGELOGLOCK,
 			Language.LANGUAGE);
 	}
 }
